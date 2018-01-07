@@ -1,9 +1,9 @@
 package tk.kahsolt.akasha.example;
 
 import tk.kahsolt.akasha.Akasha;
-import tk.kahsolt.akasha.model.Cache;
 import tk.kahsolt.akasha.model.FieldEntry;
 import tk.kahsolt.akasha.model.Manager;
+import tk.kahsolt.akasha.model.ManagerEntry;
 import tk.kahsolt.akasha.model.Model;
 
 import java.sql.Timestamp;
@@ -13,10 +13,8 @@ import java.util.UUID;
 
 public class Pressure extends Model {
 
-    @Manager
-    public static Pressure objects;
-    @Cache
-    public static ArrayList<Pressure> cache;
+    @ManagerEntry
+    public static Manager objects;
 
     @FieldEntry
     public UUID uuid;
@@ -73,41 +71,44 @@ public class Pressure extends Model {
         Akasha akasha = new Akasha();
         akasha.register(Pressure.class);
 
-        // 构表：757/701/692=0.7s
-        // 模型化：1581/1732/1592/1570/1518=1.6s
+        // 构表：0.7s
+        // 模型化：1.2s
         time = System.currentTimeMillis();
         akasha.start();
         System.out.println(String.format("start(): %d", System.currentTimeMillis()-time));
 
-        // 插入数据：2354/2531/2574/2677/2373/2447=2.5s
-        time = System.currentTimeMillis();
-        Pressure.beginUpdate();
-        for (int i = 0; i < 5000; i++) {
-            Pressure p = new Pressure();
-            p.uuid = UUID.randomUUID();
-            p.int1 = random.nextInt(); p.int2 = random.nextInt();
-            p.int3 = random.nextInt(); p.int4 = random.nextInt();
-            p.int5 = random.nextInt(); p.int6 = random.nextInt();
-            p.flt1 = random.nextDouble(); p.flt2 = random.nextDouble();
-            p.flt3 = random.nextDouble(); p.flt4 = random.nextDouble();
-            p.str1 = UUID.randomUUID().toString().substring(0, 30);
-            p.str2 = UUID.randomUUID().toString();
-            p.str3 = UUID.randomUUID().toString() + UUID.randomUUID().toString();
-            p.str4 = UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString();
-            p.nstr1 = UUID.randomUUID().toString() + UUID.randomUUID().toString();
-            p.nstr2 = UUID.randomUUID().toString();
-            p.txt1 = UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString();
-            p.txt2 = UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString()+ UUID.randomUUID().toString();
-            p.ts1 = new Timestamp(random.nextLong());
-            p.ts2 = new Timestamp(random.nextLong());
-            p.ts3 = new Timestamp(random.nextLong());
-            p.save();
+        // 插入数据：2.5s
+        boolean doInsert = false;
+        if(doInsert) {
+            time = System.currentTimeMillis();
+            Pressure.beginUpdate();
+            for (int i = 0; i < 5000; i++) {
+                Pressure p = new Pressure();
+                p.uuid = UUID.randomUUID();
+                p.int1 = random.nextInt(); p.int2 = random.nextInt();
+                p.int3 = random.nextInt(); p.int4 = random.nextInt();
+                p.int5 = random.nextInt(); p.int6 = random.nextInt();
+                p.flt1 = random.nextDouble(); p.flt2 = random.nextDouble();
+                p.flt3 = random.nextDouble(); p.flt4 = random.nextDouble();
+                p.str1 = UUID.randomUUID().toString().substring(0, 30);
+                p.str2 = UUID.randomUUID().toString();
+                p.str3 = UUID.randomUUID().toString() + UUID.randomUUID().toString();
+                p.str4 = UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString();
+                p.nstr1 = UUID.randomUUID().toString() + UUID.randomUUID().toString();
+                p.nstr2 = UUID.randomUUID().toString();
+                p.txt1 = UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString();
+                p.txt2 = UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString() + UUID.randomUUID().toString()+ UUID.randomUUID().toString();
+                p.ts1 = new Timestamp(random.nextLong());
+                p.ts2 = new Timestamp(random.nextLong());
+                p.ts3 = new Timestamp(random.nextLong());
+                p.save();
+            }
+            Pressure.endUpdate();
+            System.out.println(String.format("Bulk INSERT: %d", System.currentTimeMillis()-time));
+            System.out.println("Count = " + Pressure.objects.all().size());
         }
-        Pressure.endUpdate();
-        System.out.println(String.format("Bulk INSERT: %d", System.currentTimeMillis()-time));
-        System.out.println("Count = " + Pressure.objects.all().size());
 
-        // 简单筛选：58110/57907/58582=58s
+        // 简单筛选：48s
         time = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
             models = Pressure.objects.filterNull("ts1").getResults();
@@ -124,7 +125,7 @@ public class Pressure extends Model {
         }
         System.out.println(String.format("simple filter: %d", System.currentTimeMillis()-time));
 
-        // 级联筛选：22335/23853/22640=23s
+        // 级联筛选：23s
         time = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
             models = Pressure.objects.filterNotNull("ts1")
@@ -148,8 +149,7 @@ public class Pressure extends Model {
         }
         System.out.println(String.format("filter & modify: %d", System.currentTimeMillis()-time));
 
-
-        // 全部更新：2931/2803=28s
+        // 更新：3s
         time = System.currentTimeMillis();
         Pressure.beginUpdate();
         for (Model model : Pressure.objects.all()) {
@@ -159,13 +159,16 @@ public class Pressure extends Model {
         System.out.println(String.format("UPDATE: %d", System.currentTimeMillis()-time));
 
         // 删除：1316/1161=12s
-        time = System.currentTimeMillis();
-        Pressure.beginUpdate();
-        for (Model model : Pressure.objects.all()) {
-            model.remove();
+        boolean doDelete = false;
+        if(doDelete) {
+            time = System.currentTimeMillis();
+            Pressure.beginUpdate();
+            for (Model model : Pressure.objects.all()) {
+                model.remove();
+            }
+            Pressure.endUpdate();
+            System.out.println(String.format("DELETE: %d", System.currentTimeMillis()-time));
         }
-        Pressure.endUpdate();
-        System.out.println(String.format("DELETE: %d", System.currentTimeMillis()-time));
 
         akasha.stop();
     }

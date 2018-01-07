@@ -77,7 +77,7 @@ public abstract class SQLEngine {
      *   执行失败返回值==-1
      */
     public int execute(String sqlTemplate, Object... parameters) {
-        logger.debug(String.format("\\Execute\\ %s", sqlTemplate.substring(0, 20)));
+        dumpQuery("\\Execute\\", sqlTemplate, parameters);
         try {
             PreparedStatement ps = dbConnection.prepareStatement(sqlTemplate);
             for (int i = 1; i <= parameters.length; i++) ps.setObject(i, parameters[i-1]);
@@ -86,7 +86,6 @@ public abstract class SQLEngine {
             return effectedRows;
         } catch (SQLException e) {
             e.printStackTrace();
-            dumpQuery(sqlTemplate, parameters);
             try {
                 if(!dbConnection.getAutoCommit()) dbConnection.rollback();
             } catch (SQLException e1) { e1.printStackTrace(); }
@@ -101,7 +100,7 @@ public abstract class SQLEngine {
      *   query      取结果集ResultSet(记得关闭)  类型映射在Model.modalize()中处理，用于模型化
      */
     public Object acquire(String sqlTemplate, Object... parameters) {
-        logger.debug(String.format("/Acquire/ %s", sqlTemplate.substring(0, 20)));
+        // dumpQuery("/Acquire/", sqlTemplate, parameters);
         try {
             ResultSet rs = query(sqlTemplate, parameters);
             rs.next();
@@ -109,13 +108,12 @@ public abstract class SQLEngine {
             rs.close();
             return res;
         } catch (SQLException e) {
-            dumpQuery(sqlTemplate, parameters);
             e.printStackTrace();
         }
         return null;
     }
     public ArrayList<Object> fetch(String sqlTemplate, Object... parameters) {
-        logger.debug(String.format("/Fetch/ %s", sqlTemplate.substring(0, 20)));
+        // dumpQuery("/Fetch/", sqlTemplate, parameters);
         try {
             ResultSet rs = query(sqlTemplate, parameters);
             ArrayList<Object> res = new ArrayList<>();
@@ -125,33 +123,30 @@ public abstract class SQLEngine {
             rs.close();
             return res;
         } catch (SQLException e) {
-            dumpQuery(sqlTemplate, parameters);
             e.printStackTrace();
         }
         return new ArrayList<>();
     }
     public ResultSet query(String sqlTemplate, Object... parameters) {
-        logger.debug(String.format("/Query/ %s", sqlTemplate.substring(0, 20)));
+        dumpQuery("/Query/", sqlTemplate, parameters);
         try {
             PreparedStatement ps = dbConnection.prepareStatement(sqlTemplate);
             for (int i = 1; i <= parameters.length; i++) ps.setObject(i, parameters[i-1]);
             return ps.executeQuery();
         } catch (SQLException | ArrayIndexOutOfBoundsException e) {
-            dumpQuery(sqlTemplate, parameters);
             e.printStackTrace();
         }
         return null;
     }
 
-    private void dumpQuery(String sqlTemplate, Object... parameters) {
-        logger.error(sqlTemplate);
+    private void dumpQuery(String action, String sqlTemplate, Object... parameters) {
         ArrayList<String> params = new ArrayList<>();
         for (int i = 0; i < parameters.length; i++) {
             if(parameters[i]==null) params.add("<NULL>");
             else params.add(parameters[i].toString());
         }
         String paramStr = String.join(", ", params);
-        logger.error(paramStr);
+        logger.debug(String.format("%s %s\t%s", action, sqlTemplate, params));
     }
 
 }

@@ -22,13 +22,10 @@ public class TypeMap {
     public static String lookup(Class<?> clazz) {
         return type_map.get(clazz);
     }
-
     public static boolean isNumeric(Class<?> clazz) {
         return clazz==Integer.class || clazz==Double.class;
     }
-
     public static boolean isTextual(Class<?> clazz) { return clazz==String.class || clazz==UUID.class; }
-
     public static boolean isTemporal(Class<?> clazz) {
         return clazz==Timestamp.class;
     }

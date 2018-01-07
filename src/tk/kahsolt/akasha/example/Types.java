@@ -1,23 +1,19 @@
 package tk.kahsolt.akasha.example;
 
 import tk.kahsolt.akasha.Akasha;
-import tk.kahsolt.akasha.model.Cache;
 import tk.kahsolt.akasha.model.FieldEntry;
 import tk.kahsolt.akasha.model.Manager;
+import tk.kahsolt.akasha.model.ManagerEntry;
 import tk.kahsolt.akasha.model.Model;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.UUID;
 
 public class Types extends Model {
 
-    @Manager
-    public static Types objects;
-    @Cache
-    public static ArrayList<Types> cache;
+    @ManagerEntry
+    public static Manager objects;
 
     @FieldEntry
     public Integer integer;

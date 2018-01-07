@@ -21,11 +21,32 @@
     - Intellij artifact - JAR
 
 ## Changelog
+  - v0.3
+```java
+/* 1.删除Cache注解及相关字段要求，只能通过objects.all()来取
+ * 2.分离Manager和Model，Manger注解改名为ManagerEntry
+ *   且如不显式定义Manager字段，也可通过模型类的实例来获取
+ *     Manager objects = new User().objects();
+ * 3.增加内部缓存，优化了模型化启动和查询的速度
+ * 4.增加一个事件钩子即onModelized()，用户可重载此方法
+ *   以实现一些初始化工作
+ */
+
+public static HashMap<UUID, Player> players;
+
+@Override
+public void onModelized() {
+    // 建一个Hash表方便按键查找
+    players = new HashMap<>();
+    for (Model player : Player.objects.all()) {
+        players.put(((Player)player).uuid, (Player) player);
+    }
+}
+```
 
   - v0.2
 ```java
-/*
- * 1.支持启动时自动检测模型类字段的更改，自动向数据表增加新列。
+/* 1.支持启动时自动检测模型类字段的更改，自动向数据表增加新列。
  *   考虑安全性及向Sqlite兼容，不提供自动删除列和修改列数据类型的操作
  *   例如example.AutoColumn，每次增加一个字段后重启程序
  *   启动时Model.sqlize()会感应到字段增加，自动ALTER TABLE
@@ -43,14 +64,12 @@ public Timestamp lastone;
 ```
 日志中可见如下记录：
 
-    2018-01-07 00:20:19 <main:0> [INFO] Fresh start, sqlizing for model 'AutoColumn'.
-    2018-01-07 00:20:20 <main:300> [INFO] Modelizing from table 'AutoColumn'.
-    2018-01-07 00:20:46 <main:0> [INFO] Adding new field 'then' to model 'AutoColumn'.
-    2018-01-07 00:20:46 <main:309> [INFO] Modelizing from table 'AutoColumn'.
-    2018-01-07 00:20:53 <main:0> [INFO] Adding new field 'yetAnother' to model 'AutoColumn'.
-    2018-01-07 00:20:53 <main:330> [INFO] Modelizing from table 'AutoColumn'.
-    2018-01-07 00:21:00 <main:0> [INFO] Adding new field 'lastone' to model 'AutoColumn'.
-    2018-01-07 00:21:00 <main:316> [INFO] Modelizing from table 'AutoColumn'.
+    2018-01-07 23:12:59 <main:0> [INFO] Fresh start, sqlizing for model 'AutoColumn'.
+    2018-01-07 23:13:00 <main:780> [INFO] Modelizing from table 'AutoColumn'.
+    2018-01-07 23:13:06 <main:0> [INFO] Changes detected, add field 'then' to model 'AutoColumn'.
+    2018-01-07 23:13:06 <main:349> [INFO] Modelizing from table 'AutoColumn'.
+    2018-01-07 23:13:12 <main:0> [INFO] Changes detected, add field 'yetAnother' to model 'AutoColumn'.
+    2018-01-07 23:13:13 <main:332> [INFO] Changes detected, add field 'lastone' to model 'AutoColumn'.
 
   - v0.1
     基本功能OK，参考下文Exmaple
@@ -62,10 +81,8 @@ public Timestamp lastone;
 */
 public class Player extends Model {
 
-    @Manager
+    @ManagerEntry
     public static Player objects;
-    @Cache
-    public static ArrayList<Player> cache;
 
     @FieldEntry(unique = true)
     public UUID uuid;

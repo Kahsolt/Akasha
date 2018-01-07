@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 public @interface FieldEntry {
 
     /*
-     *  用来注册类字段到数据库列的映射，建议字段为public修饰
+     *  用来注册类字段到数据库列的映射，字段请以public修饰
      */
 
     /*

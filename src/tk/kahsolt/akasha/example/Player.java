@@ -1,22 +1,18 @@
 package tk.kahsolt.akasha.example;
 
 import tk.kahsolt.akasha.Akasha;
-import tk.kahsolt.akasha.model.Cache;
 import tk.kahsolt.akasha.model.FieldEntry;
 import tk.kahsolt.akasha.model.Manager;
+import tk.kahsolt.akasha.model.ManagerEntry;
 import tk.kahsolt.akasha.model.Model;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.UUID;
+import java.util.*;
 
 public class Player extends Model {
 
-    @Manager
-    public static Player objects;
-    @Cache
-    public static ArrayList<Player> cache;
+    @ManagerEntry
+    public static Manager objects;
 
     @FieldEntry(unique = true)
     public UUID uuid;
@@ -35,11 +31,25 @@ public class Player extends Model {
     @FieldEntry(length = 0)
     public String info_struct;     // a structured info string, parse it by yourself!
 
-    public Player() { }
-    public Player(String nickname, String password) { this.nickname = nickname; this.password = password; }
+    public static HashMap<UUID, Player> players;
+
+    public Player() { } // 供Akasha使用的无参构造
+    public Player(String nickname, String password) {
+        this.nickname = nickname;
+        this.password = password;
+    }
 
     private void addItem(String item, int count) {
         this.info_struct += String.format("%s:%d;", item, count);
+    }
+
+    @Override
+    public void onModelized() {
+        // 建一个Hash表方便按键查找
+        players = new HashMap<>();
+        for (Model player : Player.objects.all()) {
+            players.put(((Player)player).uuid, (Player) player);
+        }
     }
 
     public static void main(String[] args) {
@@ -73,9 +83,8 @@ public class Player extends Model {
         me.info_struct = "bread:5;stone:20;";
         me.addItem("coal", 10); // me.removeItem("gold", 5); 自己解析字符串我懒得写了:)
         me.save();
-        System.out.println(me);
 
-        me.remove();
+        System.out.println(players.get(me.uuid));   // use lookup table
 
         akasha.stop();
     }
