@@ -7,7 +7,7 @@ import tk.kahsolt.akasha.model.ManagerEntry;
 import tk.kahsolt.akasha.model.Model;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.UUID;
 
@@ -66,13 +66,13 @@ public class Pressure extends Model {
     public static void main(String[] args) {
         long time;
         Random random = new Random();
-        ArrayList<Model> models;
+        HashSet<Model> models;
 
         Akasha akasha = new Akasha();
         akasha.register(Pressure.class);
 
         // 构表：0.7s
-        // 模型化：1.2s
+        // 模型化：1.4s
         time = System.currentTimeMillis();
         akasha.start();
         System.out.println(String.format("start(): %d", System.currentTimeMillis()-time));
@@ -108,7 +108,7 @@ public class Pressure extends Model {
             System.out.println("Count = " + Pressure.objects.all().size());
         }
 
-        // 简单筛选：48s
+        // 简单筛选：38s
         time = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
             models = Pressure.objects.filterNull("ts1").getResults();
@@ -125,7 +125,7 @@ public class Pressure extends Model {
         }
         System.out.println(String.format("simple filter: %d", System.currentTimeMillis()-time));
 
-        // 级联筛选：23s
+        // 级联筛选：18s
         time = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
             models = Pressure.objects.filterNotNull("ts1")
@@ -133,23 +133,23 @@ public class Pressure extends Model {
                     .filterLike("txt2", "AB")
                     .filterBetween("flt1", random.nextDouble(), 2 * random.nextDouble())
                     .getResults();
-            if(models.size()>=1) ((Pressure)models.get(0)).str3 = UUID.randomUUID().toString();
+            if(models.size()>=1) (((Pressure)models.iterator().next())).str3 = UUID.randomUUID().toString();
             models = Pressure.objects.filterLessEqual("txt2", "CD")
                     .filterGreaterEqual("int4", random.nextInt())
                     .filterLike("nstr2", "AB")
                     .filterBetween("ts2", new Timestamp(random.nextInt()), new Timestamp(random.nextLong()))
                     .getResults();
-            if(models.size()>=1) ((Pressure)models.get(0)).ts2 = new Timestamp(random.nextLong());
+            if(models.size()>=1) (((Pressure)models.iterator().next())).ts2 = new Timestamp(random.nextLong());
             models = Pressure.objects.filterNotNull("txt2")
                     .filterGreaterEqual("int6", random.nextInt())
                     .filterBetween("nstr2", "95", "CD")
                     .filterLike("txt2", "AB")
                     .getResults();
-            if(models.size()>=1) ((Pressure)models.get(0)).flt2 = random.nextDouble();
+            if(models.size()>=1) (((Pressure)models.iterator().next())).flt2 = random.nextDouble();
         }
         System.out.println(String.format("filter & modify: %d", System.currentTimeMillis()-time));
 
-        // 更新：3s
+        // 更新：4s
         time = System.currentTimeMillis();
         Pressure.beginUpdate();
         for (Model model : Pressure.objects.all()) {

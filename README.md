@@ -27,7 +27,7 @@
  * 2.分离Manager和Model，Manger注解改名为ManagerEntry
  *   且如不显式定义Manager字段，也可通过模型类的实例来获取
  *     Manager objects = new User().objects();
- * 3.增加内部缓存，优化了模型化启动和查询的速度
+ * 3.增加内部缓存，结果集ArrayList换为HasSet，优化了查询的速度
  * 4.增加一个事件钩子即onModelized()，用户可重载此方法
  *   以实现一些初始化工作
  */

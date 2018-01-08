@@ -68,7 +68,7 @@ public class Types extends Model {
         }
 
         // 修改
-        Types types = (Types)Types.objects.filterNull("integer").getResults().get(0);
+        Types types = (Types)Types.objects.filterNull("integer").getResults().iterator().next();
         types.integer = 5;
         types.nstring = "sadasd";
         types.save();

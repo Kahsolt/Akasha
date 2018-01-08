@@ -63,7 +63,7 @@ public class Player extends Model {
         new Player("luper", "A-ha?").save();
 
         // 更多filter请参考example.Pressure
-        ArrayList<Model> res = Player.objects.filterLike("password", "-").getResults();
+        HashSet<Model> res = Player.objects.filterLike("password", "-").getResults();
         for (Model model : res) {
             System.out.println(model);
         }

@@ -1,8 +1,8 @@
 /*
  * Author : Kahsolt <kahsolt@qq.com>
  * Create Date : 2018-01-06
- * Update Date : 2018-01-07
- * Version : v0.3
+ * Update Date : 2018-01-08
+ * Version : v0.3.1
  * License : GPLv3
  * Description : 主引擎：数据库配置、生成、连接
  */
@@ -15,14 +15,12 @@ import tk.kahsolt.akasha.db.MySQLEngine;
 import tk.kahsolt.akasha.db.SQLiteEngine;
 import tk.kahsolt.akasha.model.*;
 
-import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 
 public final class Akasha {
 
@@ -44,7 +42,7 @@ public final class Akasha {
         dbEngine.connect();
 
         HashMap<Class<? extends Model>, Manager> managers = new HashMap<>();
-        HashMap<Class<? extends Model>, ArrayList<? extends Model>> collections = new HashMap<>();
+        HashMap<Class<? extends Model>, HashSet<? extends Model>> collections = new HashMap<>();
         HashMap<Class<? extends Model>, ArrayList<Field>> fieldsets = new HashMap<>();
         try {
             Field field = Model.class.getDeclaredField("dbEngine");

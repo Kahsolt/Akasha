@@ -7,7 +7,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
 
 public abstract class SQLEngine {
 
@@ -26,7 +25,7 @@ public abstract class SQLEngine {
             if(!dbConnection.getAutoCommit()) {
                 try {
                     dbConnection.commit();  // in case you forget to commit
-                } catch (SQLException e) { }
+                } catch (SQLException ignored) { }
             }
             dbConnection.close();
         } catch (Exception e) {
@@ -141,9 +140,9 @@ public abstract class SQLEngine {
 
     private void dumpQuery(String action, String sqlTemplate, Object... parameters) {
         ArrayList<String> params = new ArrayList<>();
-        for (int i = 0; i < parameters.length; i++) {
-            if(parameters[i]==null) params.add("<NULL>");
-            else params.add(parameters[i].toString());
+        for (Object parameter : parameters) {
+            if (parameter == null) params.add("<NULL>");
+            else params.add(parameter.toString());
         }
         String paramStr = String.join(", ", params);
         logger.debug(String.format("%s %s\t%s", action, sqlTemplate, params));

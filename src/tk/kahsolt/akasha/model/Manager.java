@@ -3,17 +3,18 @@ package tk.kahsolt.akasha.model;
 import java.lang.reflect.Field;
 import java.text.DateFormat;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 
 public class Manager {
 
     // Kernels & Caches
-    private ArrayList<? extends Model> collection;
     private Class<? extends Model> clazz;
-    public Manager(ArrayList<? extends Model> collection, Class<? extends Model> clazz) {
-        this.collection = collection;
+    private HashSet<? extends Model> collection;
+
+    public Manager(Class<? extends Model> clazz, HashSet<? extends Model> collection) {
         this.clazz = clazz;
+        this.collection = collection;
     }
 
     // Operations on the cached collection
@@ -23,8 +24,8 @@ public class Manager {
         BETWEEN, LIKE
     }
     public class Filter {
-        private ArrayList<Model> results;  // getResults()之前的查询集合缓冲区
-        private Filter() { this.results = new ArrayList<>(collection); }
+        private HashSet<Model> results;  // getResults()之前的查询集合缓冲区
+        private Filter() { this.results = new HashSet<>(collection); }
 
         private boolean compare(Object lvalue, Object rvalue, CompareOperator operator) {
             Class<?> type = lvalue.getClass();
@@ -81,7 +82,7 @@ public class Manager {
             return false;
         }
         private Filter filterByOperator(String field, CompareOperator operator) {
-            ArrayList<Model> pass = new ArrayList<>();
+            HashSet<Model> pass = new HashSet<>();
             for (Model model : results) {
                 try {
                     Field f = clazz.getDeclaredField(field);
@@ -101,7 +102,7 @@ public class Manager {
             return this;
         }
         private Filter filterByOperator(String field, CompareOperator operator, Object value) {
-            ArrayList<Model> pass = new ArrayList<>();
+            HashSet<Model> pass = new HashSet<>();
             for (Model model : results) {
                 try {
                     Field f = clazz.getDeclaredField(field);
@@ -130,7 +131,7 @@ public class Manager {
             return this;
         }
         private Filter filterByOperator(String field, CompareOperator operator, Object minValue, Object maxValue) {
-            ArrayList<Model> pass = new ArrayList<>();
+            HashSet<Model> pass = new HashSet<>();
             for (Model model : results) {
                 try {
                     Field f = clazz.getDeclaredField(field);
@@ -159,7 +160,7 @@ public class Manager {
         public Filter filterLike(String field, Object value) { return filterByOperator(field, CompareOperator.LIKE, value);}
         public Filter filterBetween(String field, Object minValue, Object maxValue) { return filterByOperator(field, CompareOperator.BETWEEN, minValue, maxValue);}
 
-        public ArrayList<Model> getResults() { return results; }
+        public HashSet<Model> getResults() { return results; }
     }
     public Filter filterNull(String field) { return new Filter().filterNull(field); }
     public Filter filterNotNull(String field) { return new Filter().filterNotNull(field); }
@@ -171,11 +172,12 @@ public class Manager {
     public Filter filterLessEqual(String field, Object value) { return new Filter().filterLessEqual(field, value); }
     public Filter filterBetween(String field, Object minValue, Object maxValue) { return new Filter().filterBetween(field, minValue, maxValue); }
     public Filter filterLike(String field, Object value) { return new Filter().filterLike(field, value);}
-    public ArrayList<Model> all() { return new ArrayList<>(collection); }
+    public HashSet<Model> all() { return new HashSet<>(collection); }
     public Model get(String field, Object value) {  // shortcut
-        ArrayList<Model> res = filterEqual(field, value).getResults();
-        return res.size()==1 ? res.get(0) : null;
+        HashSet<Model> res = filterEqual(field, value).getResults();
+        return res.size()==1 ? res.iterator().next() : null;
     }
+
     public void saveAll() {  // shortcut
         Model.beginUpdate();
         for (Model model : collection) {

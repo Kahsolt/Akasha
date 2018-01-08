@@ -21,13 +21,13 @@ public abstract class Model {
     // Kernels & Caches
     private static SQLEngine dbEngine;                                              // 数据库引擎
     private static HashMap<Class<? extends Model>, Manager> managers;               // 登记各模型管理器
-    private static HashMap<Class<? extends Model>, ArrayList<Model>> collections;   // 登记各模型集合
+    private static HashMap<Class<? extends Model>, HashSet<Model>> collections;     // 登记各模型集合
     private static HashMap<Class<? extends Model>, ArrayList<Field>> fieldsets;     // 缓存各模型自定义字段集(不含默认字段)
     private static HashMap<String, String> sqlTemplates = new HashMap<>();          // 缓存SQL模板语句
     private void modelize() {  // execute sql, pack results to cache
         Class<? extends Model> clazz = this.getClass();
         String clazzName = clazz.getSimpleName();
-        ArrayList<Model> collection = new ArrayList<>();
+        HashSet<Model> collection = new HashSet<>();
         logger.info(String.format("Modelizing from table '%s'.", clazzName));
         try {
             String sql = dbEngine.sqlBuilder.select("*").from(clazzName).end();
@@ -64,7 +64,7 @@ public abstract class Model {
         } catch (SQLException | IllegalAccessException | InstantiationException e) { e.printStackTrace(); }
         collections.put(clazz, collection);
 
-        Manager manager = new Manager(collection, clazz);
+        Manager manager = new Manager(clazz, collection);
         managers.put(clazz, manager);
         try {
             for(Field field : clazz.getDeclaredFields()) {
@@ -274,7 +274,7 @@ public abstract class Model {
                 Object val = field.get(this);
                 value = val==null ? "" : TypeMap.isNumeric(val.getClass()) ?
                         val.toString() : String.format("'%s'", val.toString());
-            } catch (IllegalAccessException e) { /* safely ignore */ }
+            } catch (IllegalAccessException ignored) { }
             segs.add(String.format("%s=%s", name, value));
         }
         String fields = String.join(", ", segs);

@@ -17,12 +17,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/log4j.properties">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Akasha.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Akasha.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="136">
+              <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -32,16 +32,16 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="170">
-                <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+              <first_editor relative-caret-position="153">
+                <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
                 <folding>
-                  <marker date="1515345166140" expanded="true" signature="712:965" ph="/.../" />
-                  <marker date="1515345166140" expanded="true" signature="1243:1474" ph="/.../" />
-                  <marker date="1515345166140" expanded="true" signature="3013:3016" ph="{}" />
-                  <marker date="1515345166140" expanded="true" signature="3069:3124" ph="{...}" />
-                  <marker date="1515345166140" expanded="false" signature="3174:3185" ph=" { " />
-                  <marker date="1515345166140" expanded="false" signature="3242:3248" ph=" }" />
-                  <marker date="1515345166140" expanded="true" signature="3293:4395" ph="{...}" />
+                  <marker date="1515376112663" expanded="true" signature="712:980" ph="/.../" />
+                  <marker date="1515376112663" expanded="true" signature="1258:1489" ph="/.../" />
+                  <marker date="1515376112663" expanded="true" signature="3028:3031" ph="{}" />
+                  <marker date="1515376112663" expanded="true" signature="3084:3139" ph="{...}" />
+                  <marker date="1515376112663" expanded="false" signature="3189:3200" ph=" { " />
+                  <marker date="1515376112663" expanded="false" signature="3257:3263" ph=" }" />
+                  <marker date="1515376112663" expanded="true" signature="3308:4410" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -64,11 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>manager</find>
-      <find>sqlTemplates = new HashMap&lt;&gt;</find>
-      <find>f.get(o)</find>
-      <find>put</find>
-      <find>, &quot;[^;]*&quot;</find>
       <find>suplazz</find>
       <find>compareT</find>
       <find>logger</find>
@@ -94,6 +89,11 @@
       <find>fieldsets</find>
       <find>insert(</find>
       <find>catch</find>
+      <find>new Filter()</find>
+      <find>ignore</find>
+      <find>filter.begin()</find>
+      <find>Arra</find>
+      <find>List</find>
     </findStrings>
     <replaceStrings>
       <replace>FieldAttribute</replace>
@@ -115,6 +115,8 @@
       <replace>filter</replace>
       <replace>collections</replace>
       <replace>clazz</replace>
+      <replace>filter.begin()</replace>
+      <replace>new Filter()</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -165,16 +167,16 @@
         <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/model/TypeMap.java" />
         <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/model/FieldEntry.java" />
         <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/model/ManagerEntry.java" />
-        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Types.java" />
-        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/db/SQLEngine.java" />
         <option value="$PROJECT_DIR$/src/log4j.properties" />
         <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/example/AutoColumn.java" />
-        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/Akasha.java" />
-        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Player.java" />
         <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Tmp.java" />
+        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/db/SQLEngine.java" />
+        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Types.java" />
+        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Player.java" />
         <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/model/Manager.java" />
         <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Pressure.java" />
-        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/tk/kahsolt/akasha/Akasha.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -206,9 +208,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,6 +222,12 @@
               <item name="Akasha" type="b2602c69:ProjectViewProjectNode" />
               <item name="Akasha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Akasha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Akasha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="akasha" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -270,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Player">
+  <component name="RunManager" selected="Application.AutoColumn">
     <configuration name="AutoColumn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="tk.kahsolt.akasha.example.AutoColumn" />
@@ -364,10 +372,10 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Player" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Types" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Pressure" />
-        <item index="3" class="java.lang.String" itemvalue="Application.AutoColumn" />
+        <item index="0" class="java.lang.String" itemvalue="Application.AutoColumn" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Player" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Types" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Pressure" />
       </list>
     </recent_temporary>
   </component>
@@ -419,11 +427,12 @@
       <workItem from="1515207029852" duration="42546000" />
       <workItem from="1515256747514" duration="74000" />
       <workItem from="1515319813615" duration="25350000" />
+      <workItem from="1515373932433" duration="2198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="361500000" />
+    <option name="totallyTimeSpent" value="363698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,12 +455,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3582343" sideWeight="0.5060514" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37181664" sideWeight="0.49394855" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37181664" sideWeight="0.49394855" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20726173" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21028744" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -480,13 +491,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.21.0.jar!/org/sqlite/jdbc4/JDBC4DatabaseMetaData.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.21.0.jar!/org/sqlite/jdbc3/JDBC3DatabaseMetaData.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -526,7 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="1520" column="14" lean-forward="false" selection-start-line="1520" selection-start-column="14" selection-end-line="1520" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -537,22 +540,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/HashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="203" column="24" lean-forward="false" selection-start-line="203" selection-start-column="24" selection-end-line="203" selection-end-column="24" />
-          <folding>
-            <element signature="e#7427#7428#0" expanded="false" />
-            <element signature="e#7468#7469#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/sql/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="316" column="20" lean-forward="false" selection-start-line="316" selection-start-column="4" selection-end-line="316" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -575,15 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/model/TypeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -607,13 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#1632#1633#0" expanded="false" />
-            <element signature="e#1674#1675#0" expanded="false" />
-            <element signature="e#2063#2064#0" expanded="false" />
-            <element signature="e#2415#2416#0" expanded="false" />
-            <element signature="e#2460#2461#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,10 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="e#1327#1328#0" expanded="false" />
-            <element signature="e#1369#1370#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -642,27 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <marker date="1514206322592" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1514206322592" expanded="false" signature="135:360" ph="..." />
-            <marker date="1514206322592" expanded="true" signature="550:557" ph="{}" />
-            <marker date="1514206322592" expanded="true" signature="637:655" ph="/**...*/" />
-            <marker date="1514206322592" expanded="true" signature="873:948" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="1075:1458" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="1558:3245" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="3323:3443" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="3553:4750" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="4814:5001" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="5093:5169" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="5262:5340" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="5461:5724" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="5794:5918" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="5991:6119" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="6186:7765" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="7824:8033" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="8097:8348" ph="{...}" />
-            <marker date="1514206322592" expanded="true" signature="8361:8683" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,11 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="303" column="0" lean-forward="false" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
-          <folding>
-            <element signature="e#9332#9333#0" expanded="false" />
-            <element signature="e#9368#9369#0" expanded="false" />
-            <element signature="e#10903#10904#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,7 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,7 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="356" column="0" lean-forward="false" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,9 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <element signature="e#11597#11598#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,10 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1467">
           <caret line="138" column="11" lean-forward="false" selection-start-line="138" selection-start-column="11" selection-end-line="138" selection-end-column="11" />
-          <folding>
-            <element signature="e#4787#4788#0" expanded="false" />
-            <element signature="e#4813#4814#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -775,48 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-          <folding>
-            <marker date="1515253382083" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1515253382083" expanded="false" signature="145:347" ph="..." />
-            <marker date="1515253382083" expanded="false" signature="428:439" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="469:475" ph=" }" />
-            <marker date="1515253382083" expanded="true" signature="516:594" ph="{...}" />
-            <marker date="1515253382083" expanded="false" signature="638:649" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="687:693" ph=" }" />
-            <marker date="1515253382083" expanded="true" signature="757:842" ph="{...}" />
-            <marker date="1515253382083" expanded="true" signature="885:896" ph=" { " />
-            <marker date="1515253382083" expanded="true" signature="935:941" ph=" }" />
-            <marker date="1515253382083" expanded="false" signature="983:994" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1032:1038" ph=" }" />
-            <marker date="1515253382083" expanded="false" signature="1084:1095" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1161:1167" ph=" }" />
-            <marker date="1515253382083" expanded="false" signature="1206:1217" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1270:1276" ph=" }" />
-            <marker date="1515253382083" expanded="false" signature="1316:1327" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1381:1387" ph=" }" />
-            <marker date="1515253382083" expanded="false" signature="1426:1437" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1490:1496" ph=" }" />
-            <marker date="1515253382083" expanded="false" signature="1535:1546" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1599:1605" ph=" }" />
-            <marker date="1515253382083" expanded="false" signature="1649:1660" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1695:1701" ph=" }" />
-            <marker date="1515253382083" expanded="true" signature="1764:1843" ph="{...}" />
-            <marker date="1515253382083" expanded="false" signature="1875:1886" ph=" { " />
-            <marker date="1515253382083" expanded="false" signature="1911:1917" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/db/SQLEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="146" column="9" lean-forward="true" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
-          <folding>
-            <element signature="method#disconnect#0;class#SQLEngine#0" expanded="false" />
-            <element signature="method#fetchMetadata#0;class#SQLEngine#0" expanded="false" />
-            <element signature="method#begin#0;class#SQLEngine#0" expanded="false" />
-            <element signature="method#commit#0;class#SQLEngine#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -832,14 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="3207" column="28" lean-forward="false" selection-start-line="3207" selection-start-column="28" selection-end-line="3207" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Types.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -864,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,25 +764,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1300#1301#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Tmp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Tmp.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/Double.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1024">
@@ -906,47 +773,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/model/Model.java">
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/model/TypeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="276" column="19" lean-forward="false" selection-start-line="276" selection-start-column="14" selection-end-line="276" selection-end-column="19" />
-          <folding>
-            <element signature="method#sqlize#0;class#Model#0" expanded="false" />
-            <element signature="method#defineColumn#0;class#Model#0" expanded="false" />
-            <element signature="method#insert#0;class#Model#0" expanded="false" />
-            <element signature="method#update#0;class#Model#0" expanded="false" />
-            <element signature="method#delete#0;class#Model#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/model/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="183" column="19" lean-forward="false" selection-start-line="183" selection-start-column="14" selection-end-line="183" selection-end-column="19" />
-          <folding>
-            <element signature="method#Manager#0;class#Manager#0" expanded="false" />
-            <element signature="class#CompareOperator#0;class#Manager#0" expanded="false" />
-            <element signature="method#filterByOperator#0;class#Filter#0;class#Manager#0" expanded="false" />
-            <element signature="method#filterByOperator#1;class#Filter#0;class#Manager#0" expanded="false" />
-            <element signature="method#filterByOperator#2;class#Filter#0;class#Manager#0" expanded="false" />
-            <element signature="method#get#0;class#Manager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/Akasha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Pressure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1010">
-          <caret line="129" column="33" lean-forward="false" selection-start-line="129" selection-start-column="33" selection-end-line="129" selection-end-column="33" />
+        <state relative-caret-position="323">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -959,10 +789,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/db/SQLEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="145" column="9" lean-forward="false" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#fetchMetadata#0;class#SQLEngine#0" expanded="false" />
+            <element signature="method#begin#0;class#SQLEngine#0" expanded="false" />
+            <element signature="method#commit#0;class#SQLEngine#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/HashSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="171" column="23" lean-forward="false" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
+          <folding>
+            <element signature="e#6484#6485#0" expanded="false" />
+            <element signature="e#6530#6531#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Types.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="70" column="95" lean-forward="false" selection-start-line="70" selection-start-column="95" selection-end-line="70" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="69" column="6" lean-forward="false" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/model/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="159" column="30" lean-forward="false" selection-start-line="159" selection-start-column="30" selection-end-line="159" selection-end-column="30" />
+          <folding>
+            <element signature="class#CompareOperator#0;class#Manager#0" expanded="false" />
+            <element signature="method#compare#0;class#Filter#0;class#Manager#0" expanded="false" />
+            <element signature="method#get#0;class#Manager#0" expanded="false" />
+            <element signature="method#saveAll#0;class#Manager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-482">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="33" />
+          <folding>
+            <element signature="method#sqlize#0;class#Model#0" expanded="false" />
+            <element signature="method#defineColumn#0;class#Model#0" expanded="false" />
+            <element signature="method#insert#0;class#Model#0" expanded="false" />
+            <element signature="method#update#0;class#Model#0" expanded="false" />
+            <element signature="method#delete#0;class#Model#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/example/Pressure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="151" column="15" lean-forward="false" selection-start-line="151" selection-start-column="15" selection-end-line="151" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tk/kahsolt/akasha/Akasha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Akasha.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-841">
-          <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+        <state relative-caret-position="136">
+          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -970,16 +895,16 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="170">
-            <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <first_editor relative-caret-position="153">
+            <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
             <folding>
-              <marker date="1515345166140" expanded="true" signature="712:965" ph="/.../" />
-              <marker date="1515345166140" expanded="true" signature="1243:1474" ph="/.../" />
-              <marker date="1515345166140" expanded="true" signature="3013:3016" ph="{}" />
-              <marker date="1515345166140" expanded="true" signature="3069:3124" ph="{...}" />
-              <marker date="1515345166140" expanded="false" signature="3174:3185" ph=" { " />
-              <marker date="1515345166140" expanded="false" signature="3242:3248" ph=" }" />
-              <marker date="1515345166140" expanded="true" signature="3293:4395" ph="{...}" />
+              <marker date="1515376112663" expanded="true" signature="712:980" ph="/.../" />
+              <marker date="1515376112663" expanded="true" signature="1258:1489" ph="/.../" />
+              <marker date="1515376112663" expanded="true" signature="3028:3031" ph="{}" />
+              <marker date="1515376112663" expanded="true" signature="3084:3139" ph="{...}" />
+              <marker date="1515376112663" expanded="false" signature="3189:3200" ph=" { " />
+              <marker date="1515376112663" expanded="false" signature="3257:3263" ph=" }" />
+              <marker date="1515376112663" expanded="true" signature="3308:4410" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
