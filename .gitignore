@@ -1,6 +1,9 @@
 # project meta
 .idea/
 
+# compiled
+out/
+
 # Logs
 *.log*
 
